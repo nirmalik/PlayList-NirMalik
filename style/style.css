@@ -1,0 +1,1434 @@
+body {
+    background-color: white;
+    color: black;
+    font-family: arial;
+    text-align: center
+}
+
+#loading {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: block;
+    opacity: 0.7;
+    background-color: #fff;
+    z-index: 9001;
+    text-align: center;
+}
+
+#loading-image {
+    position: absolute;
+    top: 50%;
+    transform: translateY(50%);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9002;
+}
+
+.audioWrapper {
+    margin: 0 auto;
+    width: 500px;
+    display: block;
+}
+
+.navFather {
+    position: fixed;
+    width: 100%;
+    padding-right: 40px !important;
+    padding-left: 0px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    z-index: 1039;
+}
+
+.myNav {
+    background-color: #ececec;
+}
+
+.iForUndoEdit{
+    color: gray;
+}
+.iForUndoEdit:hover{
+    cursor:pointer;
+    color:black;
+}
+
+
+
+.searchPlaylistInputFather {
+    background-color: black;
+    color: white;
+    padding-right: 5px;
+    border-radius: .25rem;
+}
+
+.searchPlaylistInputFather:hover {
+    border-color: rgba(239, 147, 104, 0.8);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(224, 146, 42, 0.6);
+    outline: 3px none;
+}
+
+.searchPlaylistInputFather li {
+    background-color: black;
+    padding-left: 15px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    height: 47px;
+    border-radius: .25rem;
+}
+
+.searchPlaylistInputFather input {
+    background-color: black;
+    color: #9eb6b9;
+    border: unset;
+    max-width: 78%;
+    flex: 0 0 78%;
+    padding-right: 2px;
+    padding-left: 2px;
+    margin-right: unset !important;
+    height: 32px;
+
+}
+
+.searchPlaylistInputFather i {
+    max-width: 22%;
+    flex: 0 0 22%;
+    line-height: 32px;
+}
+
+.searchPlaylistInputFather i:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.myNav .fa-undo:hover{
+    color:rgb(15, 65, 226);
+}
+.myNav .fa-undo:active{
+    color:rgb(15, 65, 226);
+}
+.searchPlaylistInputFather input:focus {
+    background-color: rgb(37, 28, 12);
+    color: white;
+    border-color: unset;
+    box-shadow: unset;
+    outline: 0 none;
+    background-image: linear-gradient(to left top, #392e1d, #3d3321, #413726, #463c2a, #4a412f);
+}
+.searchPlaylistInputFather ul .nav-item {
+    min-width: 220px;
+}
+
+.playFromSearch{
+    color: rgb(66, 63, 63);
+    animation: blackwhite 1200ms linear;
+    animation-iteration-count: infinite;
+    -webkit-text-stroke: 3px black;
+}
+.playFromSearch:hover{
+    color: rgb(53, 28, 28);
+    animation: off;
+    -webkit-text-stroke: 3px black;
+}
+
+.navListItems .addStyleButton {
+    font-size: 1.3rem;
+}
+
+.addStyleButton:hover {
+    cursor: pointer;
+    -webkit-animation: pulse 1s linear infinite;
+    animation: pulse 1s linear infinite;
+}
+
+
+
+
+.myPlaylistsContent {
+    position: relative;
+    top: 100px;
+    z-index: 1;
+}
+
+.albumCountainer {
+    height: 320px;
+    padding: 10px;
+}
+
+.playlistInner {
+    position: relative;
+    height: 300px;
+}
+
+.playlistInner h2 {
+    font-family: 'Architects Daughter', cursive;
+    position: absolute;
+    top: 2%;
+    left: 51%;
+    transform: translateX(-49%);
+    font-size: 200%;
+    z-index: 2;
+}
+
+.diskImg {
+    position: inline-block;
+    opacity: 0.85;
+}
+
+.playlistInner img {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 200px;
+    width: 200px;
+    background-color: white;
+    z-index: 1;
+    border-radius: 100%;
+}
+
+.playlistInner .diskImg:hover {
+    opacity: 1;
+}
+
+.playlistInner .diskImg:hover>i {
+    visibility: visible;
+}
+
+.imgPlay {
+    cursor: pointer;
+    position: absolute;
+    top: 44.7%;
+    transform: translateX(-40%);
+    font-size: 1.6rem;
+    visibility: hidden;
+    z-index: 3;
+    color: rgb(66, 63, 63);
+    animation: blackwhite 1200ms linear;
+    animation-iteration-count: infinite;
+    -webkit-text-stroke: 2px black;
+}
+
+.imgDelete {
+    cursor: pointer;
+    position: absolute;
+    top: 20.7%;
+    left: 42.5%;
+    font-size: 1.3rem;
+    color: white;
+    visibility: hidden;
+    z-index: 3;
+    -webkit-text-stroke: 1px black;
+}
+
+.imgEdit {
+    cursor: pointer;
+    position: absolute;
+    top: 21.2%;
+    transform: translateX(90%);
+    font-size: 1rem;
+    color: white;
+    visibility: hidden;
+    z-index: 3;
+    -webkit-text-stroke: 1px black;
+}
+
+.playlistInner .diskImg .imgEdit:hover {
+    color:orange;
+}
+.playlistInner .diskImg .imgEdit:active {
+    color:#c88432;
+}
+
+.playlistInner .diskImg .imgPlay:hover {
+    color: white;
+    animation: off;
+}
+.playlistInner .diskImg .imgPlay:active {
+    color: rgb(66, 63, 63);
+    animation: off;
+}
+
+.playlistInner .diskImg .imgDelete:hover {
+    color: red;
+}
+.playlistInner .diskImg .imgDelete:active {
+    color: darkred;
+}
+
+#localModal {
+    top: 30%;
+}
+
+
+
+.modal-header {
+    padding-bottom: 0;
+}
+
+.addPlaylistModalForm {
+    max-width: 56%;
+    flex: 0 0 56%;
+}
+
+.previewImageOfModalCont {
+    padding-left: unset;
+}
+
+#addPlaylistPreviewImage {
+    display: none;
+    height: 208px;
+    width: 208px;
+    border: 1px solid rgb(175, 174, 174);
+}
+
+#addPlaylistPreviewImageDiv {
+    display: block;
+    height: 208px;
+    width: 208px;
+    background-color: lightgray;
+    border: 1px solid rgb(175, 174, 174);
+}
+
+.btn-orange {
+    height: 35px;
+    border-radius: unset;
+    background-color: rgb(219, 85, 23);
+    color: white;
+}
+
+.btn-orange:hover {
+    background-color: rgb(143, 54, 13);
+}
+
+.btn-orange:focus {
+    border-color: rgb(153, 106, 35);
+    box-shadow: 0 0 8px rgb(153, 106, 35);
+}
+
+#nextBTN , #saveUpdPnameBTN{
+    margin-left: 6%;
+    max-width: 28%;
+    flex: 0 0 28%;
+    margin-right: 4%;
+}
+
+
+#ResetFieldsBTN {
+    max-width: 56%;
+    flex: 0 0 56%;
+}
+
+.errMsg {
+    background: pink;
+    color: red;
+    border: 1px solid red;
+    display: none;
+}
+
+
+.addingSongs {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.deleteSongAddRow {
+    line-height: 24px;
+}
+
+.deleteSongAddRow:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.addingSongsControlButtons .formBTNCont {
+    position: relative;
+    max-width: 20%;
+    flex: 0 0 20%;
+}
+
+.addingSongsControlButtons button {
+    height: 34px;
+}
+
+.right-addSongInput {
+    max-width: 30%;
+    flex: 0 0 30%;
+}
+
+.left-addSongInput {
+    max-width: 70%;
+    flex: 0 0 70%;
+}
+
+.songAddRow {
+    margin-top: 4px;
+    margin-bottom: 3px;
+    display: flex;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.songAddLi {
+    white-space: nowrap;
+    line-height: 24px;
+}
+
+.songAddLabel {
+    line-height: 24px;
+}
+
+.songAddInput {
+    width: 26%;
+    height: 24px;
+}
+
+.songAddInputLeft {
+    width: 53%;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.addingSongsControlButtons .navbar ul li {
+    font-size: 1.1rem;
+}
+
+.songsWrapper {
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+.songsWrapper::-webkit-scrollbar-track {
+    border-radius: 30px;
+   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}
+
+.songsWrapper::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+.songsWrapper::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    background-color: #F90;
+    background-image: -webkit-linear-gradient(45deg,
+        rgba(255, 255, 255, .2) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, .2) 50%,
+        rgba(255, 255, 255, .2) 75%,
+        transparent 75%,
+        transparent)
+}
+
+.editOptions{
+    width:100%;
+}
+#editNI{
+    margin-left: 6%;
+    max-width: 52%;
+    flex: 0 0 52%;
+    margin-right: 4%;
+}
+
+#editSO{
+    max-width: 38%;
+    flex: 0 0 38%;
+}
+
+@keyframes blackwhite {
+    0% {
+        color:white;
+    }
+    50% {
+        color: rgb(66, 63, 63);
+    }
+    100% {
+        color:white;
+    }
+    ;
+}
+
+@-webkit-keyframes blackwhite {
+    0% {
+        -webkit-color:white;
+    }
+    50% {
+        -webkit-color: rgb(66, 63, 63);
+    }
+    100% {
+        -webkit-color:white;
+    }
+    ;
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-transform: scale(1, 1);
+    }
+    50% {
+        -webkit-transform: scale(0.8, 0.8);
+    }
+    100% {
+        -webkit-transform: scale(1, 1);
+    }
+    ;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(0.8, 0.8);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+    ;
+}
+
+
+@-webkit-keyframes pulsate {
+    0% {
+        -webkit-transform: scale(0.1, 0.1);
+        opacity: 0.0;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        -webkit-transform: scale(1.2, 1.2);
+        opacity: 0.0;
+    }
+    ;
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(0.1, 0.1);
+        opacity: 0.0;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.2, 1.2);
+        opacity: 0.0;
+    }
+    ;
+}
+
+@-webkit-keyframes rotating {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+    ;
+}
+
+@-ms-keyframes rotating {
+    0% {
+        -ms-transform: rotate(0deg);
+    }
+    100% {
+        -ms-transform: rotate(360deg);
+    }
+    ;
+}
+
+@-moz-keyframes rotating {
+    0% {
+        -moz-transform: rotate(0deg);
+    }
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+    ;
+}
+
+
+@keyframes rotating {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    ;
+}
+
+@media screen and (min-width:506px) {
+    .addingSongsControlButtons {
+        max-width: 86%;
+        flex: 0 0 86%;
+        padding-left: 15px;
+    }
+}
+
+@media screen and (max-width:427px) {
+    .addingSongsControlButtons .formBTNCont {
+        max-width: 81%;
+        padding-left: 3px;
+        flex: unset;
+    }
+}
+
+@media screen and (max-width:360px) {
+    .addingSongsControlButtons .formBTNCont {
+        max-width: unset;
+        margin: auto;
+    }
+    .addingSongsControlButtons ul {
+        margin: auto;
+    }
+}
+
+
+@media screen and (min-width:1450px) {
+    .myPlaylistsContent {
+        top: 115px;
+    }
+    .playlistInner {
+        transform: scale(1.1);
+    }
+}
+
+@media screen and (max-width:1219px) and (min-width:1124px) {
+    .myPlaylistsContent {
+        top: 85px;
+    }
+    .playlistInner {
+        transform: scale(0.9);
+    }
+}
+
+@media screen and (max-width:920px) and (min-width:861px) {
+    .myPlaylistsContent {
+        top: 85px;
+    }
+    .playlistInner {
+        transform: scale(0.9);
+    }
+}
+
+@media screen and (max-width:1124px) and (min-width:862px) {
+    .albumCountainer {
+        flex: 0 0 33%;
+        max-width: 33%;
+    }
+}
+
+@media screen and (max-width:861px) and (min-width:768px) {
+    .albumCountainer {
+        flex: 0 0 49%;
+        max-width: 49%;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .addPlaylistModalForm {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+    .previewImageOfModalCont {
+        margin: auto;
+        width: unset;
+        padding-left: 15px;
+        padding-top: 15px;
+    }
+}
+
+@media screen and (min-width:576px) {
+    .navListItems li {
+        margin-right: 30px;
+        font-size: 1.2rem;
+    }
+    .addingSongsControlButtons .navbar ul {
+        margin-bottom: 5px;
+    }
+    .addingSongsControlButtons .navbar ul li {
+        margin-top: 6px;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .navbar-toggler {
+        font-size: 2rem;
+    }
+    .myNav {
+        padding-right: unset;
+        padding-left: unset;
+        font-size: 1.6rem;
+    }
+    .navListItems li:hover {
+        background-color: #d3d3d3;
+    }
+    .myNav form {
+        display: block;
+        width: 90%;
+        margin: auto;
+        padding-left: 3px;
+    }
+    .myNav li {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid black;
+    }
+    .myNav .navListItems li:first-of-type {
+        margin-top: 5px;
+        padding-top: 5px;
+        border-top: 1px solid black;
+    }
+    .playlistInner {
+        transform: scale(1.1, 1.1);
+    }
+    .addingSongsControlButtons {
+        margin: auto;
+        max-width: unset;
+        flex: unset;
+    }
+    .addingSongsControlButtons .navbar {
+        display: block;
+    }
+    .addingSongsControlButtons .navbar ul {
+        margin-bottom: 5px;
+    }
+    .myPlaylistsContent{
+        top: 200px;
+    }
+
+    #searchPlaylistInput{
+        max-width: 333%;
+        width: 300px;
+    }
+    .navbar-nav .fa-undo{
+        position: absolute;
+        right: 50px;
+    }
+}
+
+@media screen and (max-width:427px) {
+    .addingSongsControlButtons .formBTNCont {
+        margin: auto;
+    }
+    #searchPlaylistInput{
+        width: 250px;
+    }
+    .navbar-nav .fa-undo{
+        right: 30px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/*
+Media Player Controllers - others media player are in media query for customize
+*/
+.playerWrapper{
+    display:none;
+}
+.playerCont{
+    -webkit-box-shadow: 0 0 2px 2px #dcdcdc1f inset;
+    -moz-box-shadow: 0 0 2px 2px #dcdcdc1f inset;
+    box-shadow: 0 0 2px 2px #dcdcdc1f inset;
+    border: 1px solid transparent;
+    z-index: 1040;
+}
+.diskHolder img{
+    box-shadow: 0 0 38px #943215e0;
+}
+.musicControllers{
+    width: 260px;
+    height: 300px;
+    display: inline-block;
+    padding-left: 5px;
+    padding-top: 37px;
+    padding-right: 23px;
+}
+.playerDbButtons{
+    display: inline-block;
+    width: 51px;
+}
+.playerSideButtons{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 103%;
+    font-size: 2.2rem;
+}
+.playerSideButtons li{
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.playerSideButtons li .fa-times-circle{
+    color:darkgray;
+    cursor: pointer;
+}
+.playerSideButtons li .fa-times-circle:hover{
+    color: gray;
+}
+.playerSideButtons li .fa-times-circle:active{
+    color:black;
+}
+.circle-for-fa-pen{
+    color:white;
+    background-color: darkgray;
+    border: 7px solid darkgray;
+    border-radius: 100%;
+    font-size: 1.3rem;  
+    cursor: pointer;
+}
+.circle-for-fa-pen:hover{
+    background-color: gray;
+    border: 7px solid gray;
+}
+.circle-for-fa-pen:active{
+    background-color: black;
+    border: 7px solid black;
+}
+
+
+
+
+
+
+.musicControllersHead{
+    position:relative;
+    width:100%;
+    height:70px;
+}
+
+.playerAudioWrapper{
+    position:relative;
+    width: 100%;
+    height: 40px;
+}
+#playerAudioTag{
+    transform: scale(0.8);
+    position: absolute;
+    left: -12%;
+}
+
+.playerSongNameUL{
+    position: absolute;
+    top: 87%;
+    left:2%;
+    text-align: center;
+    padding-top: 5px;
+    padding-left: 4px;
+    padding-bottom: 39px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    max-width: 222px;
+    max-height: 37px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.musicControllersBody{
+    max-height: 150px;
+    position: relative;
+    width:100%;
+}
+.playerPlaylistSongNames{
+    position:absolute;
+    max-height: 150px;
+    overflow-y: auto;
+    overflow-x:hidden;
+    max-width: 222px;
+    width: 222px;
+    text-align: start;
+}
+.playerPlaylistSongNames li{
+    opacity: 0.5;
+}
+.playerPlaylistSongNames li:hover{
+    cursor: pointer;
+    opacity: 1;
+}
+.playerPlaylistSongNames li.active-song{
+    opacity:1;
+}
+.playerPlaylistSongNames::-webkit-scrollbar-track {
+    border-radius: 30px;
+    border: 1px solid rgba(123, 17, 17, 0.16);
+    background-color: #b95115;
+}
+
+.playerPlaylistSongNames::-webkit-scrollbar {
+    border-radius: 30px;
+    width: 12px;
+}
+
+.playerPlaylistSongNames::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    border: 1px solid #7b1111;
+    background-color: #811d06;
+}
+.playerPlaylistSongNames::-webkit-scrollbar-thumb:hover {
+    background-color: #751c07;
+}
+.playerPlaylistSongNames::-webkit-scrollbar-thumb:active {
+    background-color: #000;
+}
+
+
+#songsPlayed{
+    position: fixed;
+    top: 60px;
+    left: 90px;
+    line-height: 38px;
+}
+
+
+#playerDiskPauseBTN{
+    position: absolute;
+    top: 39%;
+    left: 40%;
+    font-size: 1.5rem;
+    border: 10px rgba(214, 214, 214 , 0.6) solid;
+    border-radius: 100%;
+    background-color: rgba(214, 214, 214 , 0.6);
+    animation: blackwhite 1200ms linear;
+    animation-iteration-count: infinite;
+    opacity: 0.8;
+}
+.diskHolder:hover #playerDiskPauseBTN{
+    cursor:pointer;
+    top: 44%;
+    left: 45%;
+    opacity: 1; 
+    background-color: transparent;
+    border: transparent;
+    color: rgb(66, 63, 63);
+    -webkit-text-stroke: 2px black;
+}
+.diskHolder:hover #playerDiskPauseBTN:hover{
+    color:white;
+    animation: off;
+}
+.diskHolder:hover #playerDiskPauseBTN:active{
+    color: rgb(66, 63, 63);
+    animation: off;
+}
+#hidePlayer{
+    position: fixed;
+    top: 60px;
+    left: 0;
+    z-index: 1040;
+}
+
+#minimizePlayer{
+    position: fixed;
+    top: 100px;
+    left: 0; 
+    font-size: 0.8rem;
+    z-index: 1040;
+}
+
+
+
+
+
+
+/*
+Media Player Controllers - others media player are in media query for customize
+*/
+@media screen and (min-width:576px){
+    .playerWrapper{
+        height: 315px;
+        width: 100%;
+    }
+    .playerCont{
+        left: 50%;
+        transform: translateX(-50%);
+        position: fixed;
+        top: 100px;
+        background-color: #d86724;
+        height: 300px;
+        width: 520px;
+        border-radius: 144px;
+    }
+    .playerDiskSide{
+        position: relative;
+        width: 200px;
+        height: 300px;
+        display: inline-block;
+    }
+    .diskHolder{
+        position: absolute;
+        top: 17%;
+        left: 0%;
+        width: 200px;
+        height: 200px;
+    }
+    .diskHolder img{
+        width:200px;
+        height:200px;
+        animation: rotating 1000ms linear;
+        animation-iteration-count: infinite;
+        background-color: white;
+        border-radius: 100%;
+    }
+    .pulsate-css {
+        position: absolute;
+        opacity: 0.2;
+        border-radius: 100%;
+        animation-iteration-count: infinite;
+        display: inline-block;
+    }
+    .pulsate-x1{
+        top: -9%;
+        left: -11%;
+        animation: pulsate 800ms ease-out;
+        animation-iteration-count: infinite;
+        height: 240px;
+        width: 240px;
+        border: 2px solid rgba(230, 23, 32, 0.4117647058823529);
+    }
+    .pulsate-xx{
+        position: absolute;
+        animation: pulsate 1400ms ease-out;
+        animation-iteration-count: infinite;
+        top: 20%;
+        left: 20%;
+        height: 120px;
+        width: 120px;
+        border: 2px solid rgba(239, 26, 203, 0.65);
+        opacity: 0.2;
+        border-radius: 100%;
+        display: inline-block;
+    }
+    .musicControllers{
+        width: 260px;
+        height: 300px;
+        display: inline-block;
+    }
+    .playerDbButtons{
+        display: inline-block;
+        height: 300px;
+        width: 51px;
+    }
+    .playerSideButtons{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 103%;
+        font-size: 2.2rem;
+    }
+    .playerSideButtons li{
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
+}
+
+@media screen and (max-width:676px) and (min-width:576px){
+    .playerWrapper{
+        height: 290px;
+    }
+    .playerCont{
+        left: 50%;
+        margin-left: -272px;
+        transform: scale(0.9);
+        position: fixed;
+        background-color: #d86724;
+        height: 300px;
+        top:90px;
+        width: 530px;
+        border-radius: 144px;
+    }
+
+    .playerDiskSide{
+        position: relative;
+        width: 220px;
+        height: 300px;
+        display: inline-block;
+    }
+    .diskHolder{
+        left: 6%;
+    }
+    .musicControllers{
+        width:290px;
+    }
+
+
+    .playerSideButtons li{
+        padding-bottom: 15px;
+        padding-top: 15px;
+    }
+
+}
+@media screen and (max-width:991px) and (min-width:576px){
+    #hidePlayer{
+        top: 75px;
+    }
+    #songsPlayed{
+        top:75px;
+    }
+    #minimizePlayer{
+        top: 115px;
+    }
+
+}
+@media screen and (max-width:991px) and (min-width:677px){
+    .playerCont{
+        top:110px;
+    }
+
+}
+
+
+
+
+@media screen and (max-width:575px){
+    .playerWrapper{
+        height: 580px;
+        z-index:900;
+    }
+    #songsPlayed{
+        z-index:900;
+    }
+    #minimizePlayer{
+        z-index:900;
+    }
+    #hidePlayer{
+        z-index:900;
+    }
+    .playerCont{
+        position: fixed;
+        top: 100px;
+        left: 24%;
+        background-color: #d86724;
+        height: 600px;
+        width:280px;
+        border-radius: 144px;
+        z-index:900;
+    }
+    .playerDiskSide{
+        position: relative;
+        width: 250px;
+        height: 250px;
+        display: inline-block;
+    }
+    .diskHolder{
+        position: absolute;
+        top: 8%;
+        left: 10%;
+        width: 200px;
+        height: 200px;
+    }
+    .diskHolder img{
+        width:200px;
+        height:200px;
+        animation: rotating 1000ms linear;
+        animation-iteration-count: infinite;
+        background-color: white;
+        border-radius: 100%;
+    }
+    .pulsate-css {
+        position: absolute;
+        opacity: 0.2;
+        border-radius: 100%;
+        animation-iteration-count: infinite;
+        display: inline-block;
+    }
+    .pulsate-x1{
+        top: -9%;
+        left: -11%;
+        animation: pulsate 800ms ease-out;
+        animation-iteration-count: infinite;
+        height: 240px;
+        width: 240px;
+        border: 2px solid rgba(230, 23, 32, 0.4117647058823529);
+    }
+    .pulsate-xx{
+        position: absolute;
+        animation: pulsate 1400ms ease-out;
+        animation-iteration-count: infinite;
+        top: 20%;
+        left: 20%;
+        height: 120px;
+        width: 120px;
+        border: 2px solid rgba(239, 26, 203, 0.65);
+        opacity: 0.2;
+        border-radius: 100%;
+        display: inline-block;
+    }
+    .playerSideButtons li{
+        padding-bottom: 15px;
+        padding-top: 15px;
+    }
+    .musicControllers{
+        height:350px;
+        padding-top: 0px;
+    }
+    .musicControllersBody{
+        max-height: 200px;
+    }
+    .playerPlaylistSongNames{
+        padding-left: 8px;
+        left: 5%;
+        max-height: 200px;
+        background-color: #212f3a;
+        color: #b6ece5;
+    }
+
+    .playerPlaylistSongNames::-webkit-scrollbar-track {
+        border-radius: 0px;
+        border: unset;
+        background-color: unset;
+    }
+
+    .playerPlaylistSongNames::-webkit-scrollbar {
+        border-radius: 30px;
+        width: 12px;
+    }
+
+    .playerPlaylistSongNames::-webkit-scrollbar-thumb {
+        border-radius: 0px;
+        border: 1px solid #265288;
+        background-color: #11819a;
+    }
+    .playerPlaylistSongNames::-webkit-scrollbar-thumb:hover {
+        background-color: #106a7d;
+    }
+    .playerPlaylistSongNames::-webkit-scrollbar-thumb:active {
+        background-color: #114854
+    }
+}
+@media screen and (max-width:530px){
+    .playerWrapper{
+        height: 590px;
+    }
+    .playerCont{
+        left:23%;
+        top: 85px;
+        transform: scale(0.9);
+    }
+
+}
+@media screen and (max-width:526px){
+    .playerCont{
+        left:22.7%;
+    }
+
+}
+@media screen and (max-width:523px){
+    .playerCont{
+        left:22.5%;
+    }
+
+}
+@media screen and (max-width:520px){
+    .playerCont{
+        left:22.2%;
+    }
+
+}
+@media screen and (max-width:518px){
+    .playerCont{
+        left:22%;
+    }
+
+}
+@media screen and (max-width:513px){
+    .playerCont{
+        left:21.7%;
+    }
+
+}
+@media screen and (max-width:509px){
+    .playerCont{
+        left:21.5%;
+    }
+
+}
+@media screen and (max-width:504px){
+    .playerCont{
+        left:21.2%;
+    }
+
+}
+@media screen and (max-width:500px){
+
+    .playerCont{
+        left:21%;
+    }
+
+}
+@media screen and (max-width:482px){
+    .playerWrapper{
+        height: 530px;
+    }
+    .playerCont{
+        left:21%;
+        top:60px;
+        transform: scale(0.83);
+    }
+
+}
+@media screen and (max-width:472px){
+
+    .playerCont{
+        left:20.7%;
+    }
+
+}
+@media screen and (max-width:465px){
+
+    .playerCont{
+        left:20.5%;
+    }
+
+}
+@media screen and (max-width:455px){
+
+    .playerCont{
+        left:20.2%;
+    }
+
+}
+@media screen and (max-width:450px){
+    .playerWrapper{
+        height: 450px;
+    }
+    .playerCont{
+        left: 18%;
+        top: 21px;
+        transform: scale(0.75);
+    }
+
+}
+@media screen and (max-width:436px){
+    .playerCont{
+        left: 17.7%;
+    }
+
+}
+@media screen and (max-width:428px){
+    .playerCont{
+        left: 17.5%;
+    }
+
+}
+@media screen and (max-width:422px){
+    .playerCont{
+        left: 17.2%;
+    }
+
+}
+@media screen and (max-width:418px){
+    .playerCont{
+        left: 16.6%;
+    }
+
+}
+@media screen and (max-width:415px){
+    .playerCont{
+        left: 16.3%;
+    }
+
+}
+@media screen and (max-width:410px){
+    .playerCont{
+        left: 16%;
+    }
+
+}
+@media screen and (max-width:405px){
+    .playerCont{
+        left: 15.7%;
+    }
+
+}
+@media screen and (max-width:405px){
+    .playerCont{
+        left: 15.5%;
+    }
+
+}
+@media screen and (max-width:397px){
+    .playerCont{
+        left: 15.2%;
+    }
+
+}
+@media screen and (max-width:390px){
+    .playerCont{
+        left: 15%;
+    }
+
+}
+@media screen and (max-width:385px){
+    .playerCont{
+        left: 14.5%;
+    }
+
+}
+@media screen and (max-width:380px){
+    .playerCont{
+        left: 14.2%;
+    }
+    #songsPlayed{
+        font-size:0.9rem;
+    }
+
+}
+@media screen and (max-width:375px){
+    .playerCont{
+        left: 14%;
+    }
+
+}
+@media screen and (max-width:370px){
+    .playerCont{
+        left: 13.5%;
+    }
+
+}
+@media screen and (max-width:365px){
+    .playerCont{
+        left: 13%;
+    }
+
+}
+@media screen and (max-width:360px){
+    .playerCont{
+        left: 12.5%;
+    }
+
+}
+@media screen and (max-width:355px){
+    .playerCont{
+        left: 12%;
+    }
+
+}
+@media screen and (max-width:350px){
+    .playerCont{
+        left: 11%;
+    }
+
+}
+@media screen and (max-width:340px){
+    .playerCont{
+        left: 10%;
+    }
+
+}
+.no-height{
+    height:0px;
+}
+
